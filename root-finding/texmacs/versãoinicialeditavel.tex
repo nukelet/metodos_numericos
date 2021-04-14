@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath,graphicx}
+
+%%%%%%%%%% Start TeXmacs macros
+\catcode`\>=\active \def>{
+\fontencoding{T1}\selectfont\symbol{62}\fontencoding{\encodingdefault}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+
+Comecemos pela equa{\c c}{\~a}o da densidade. Para chegarmos na massa,
+queremos resolver a integral $\bigiiint_V \rho \tmop{dV}$. Por{\'e}m, {\rho}
+n{\~a}o {\'e} vari{\'a}vel, podendo, portanto, ser tirado da integral, $\rho
+\bigiiint_V 1 \tmop{dV}$. Essa integral, por{\'e}m, se reduz ao volume, temos
+ent{\~a}o {\rho}V. Nos bastar{\'a}, para conferirmos a f{\'o}rmula $m =
+\frac{4 \pi r \tmr{^3} }{3} \rho$ que $V = \frac{4 \pi r \tmr{^3}}{3}$. Essa
+f{\'o}rmula para o volume poder{\'a} ser testada juntamente com a f{\'o}rmula
+para o volume da calota esf{\'e}rica, j{\'a} que a esfera ser{\'a} uma calota
+esf{\'e}rica com $h = 2 R$.
+
+Tomemos a esfera:
+
+\raisebox{0.0\height}{\includegraphics[width=14.8741637150728cm,height=12.4056801784074cm]{vers{\~a}oinicialeditavel-1.pdf}}
+
+Para a f{\'o}rmula da calota esf{\'e}rica, consideremos um elemento de
+{\'a}rea da nossa esfera, que ser{\'a}
+
+um cilindro com {\'a}rea da base equivalente ao c{\'i}rculo da esfera quando
+cortada pelo plano z = h e altura dH.
+
+Teremos o seguinte, num corte pelo plano xz ou yz:
+
+\raisebox{0.0\height}{\includegraphics[width=6.72625606716516cm,height=5.92468516332153cm]{vers{\~a}oinicialeditavel-2.pdf}}
+
+Isso significa que o c{\'i}rculo que ser{\'a} base do nosse elemento de
+{\'a}rea ter{\'a}, por Pit{\'a}goras, raio:
+\begin{eqnarray*}
+  \tmr{R^2} = (R - h)^2 + r^2 &  & \\
+  r = \sqrt{R^2 - (R - h)^2 } &  & \\
+  r = \sqrt{R^2 - R^2 + 2 \tmop{Rh} - h^2} &  & \\
+  r = \sqrt{2 \tmop{Rh} - h^2 } &  & 
+\end{eqnarray*}
+Para o caso de h>R, teremos um tri{\^a}ngulo similar, mas com cateto h-R ao
+inv{\'e}s de R-h. Para
+
+a f{\'o}rmula, que usa apenas o quadrado dessa diferen{\c c}a, isso n{\~a}o
+ir{\'a} importar. Nosso elemento de
+
+volume, portanto, ser{\'a} igual a
+\begin{eqnarray*}
+  \tmop{dV} = \pi r^2 \tmop{dh} &  & \\
+  \tmop{dV} = \pi \left( \sqrt{2 \tmop{Rh} - h^2 } \right)^2 \tmop{dh} &  & \\
+  \tmop{dV} = \pi (2 \tmop{Rh} - h^2) \tmop{dh} &  & 
+\end{eqnarray*}
+Para termos o volume, teremos que integrar esse valor do zero at{\'e} a altura
+da calota, que ser{\'a}
+\[ \int_0^h \pi (2 \tmop{Rh}' - h^{\prime 2}) \tmop{dh}' \]
+Essa integral definida ter{\'a} como solu{\c c}{\~a}o
+\[ V = \pi \left( \tmop{Rh}^2 - \frac{h^3}{3} \right) \]
+Que significa que a f{\'o}rmula para o volume da calota esf{\'e}rica do
+enunciado est{\'a} correta.
+
+Para h = 2R, teremos
+\begin{eqnarray*}
+  \pi \left( R (2 R)^2 - \frac{(2 R)^3 }{3} \right) &  & \\
+  \pi \left( 4 R^3 - \frac{8 R^3 }{3} \right) &  & \\
+  \frac{4 \pi R^3}{3} &  & 
+\end{eqnarray*}
+O que confirma a f{\'o}rmula para o volume da esfera que busc{\'a}vamos
+testar.
+
+Com as f{\'o}rmulas em m{\~a}os, passemos para o problema. Queremos o ponto de
+equil{\'i}brio da esfera.
+
+Temos da segunda lei de Newton que esse ser{\'a} o ponto em que as for{\c c}as
+resultantes se somam.
+
+Existem, atuando na esfera duas for{\c c}as, o peso, cujo m{\'o}dulo {\'e}
+dado pela multiplica{\c c}{\~a}o da massa
+
+por uma constante g e cuja dire{\c c}{\~a}o ser{\'a} para baixo, e o empuxo,
+que conforme o princ{\'i}pio de
+
+Arquimedes ter{\'a} m{\'o}dulo igual ao peso do l{\'i}quido deslocado e
+dire{\c c}{\~a}o para cima. Como o volume
+
+de l{\'i}quido deslocado ser{\'a} igual ao volume submerso da calota, teremos
+ent{\~a}o o seguinte
+\begin{eqnarray*}
+  \tmop{mg} - V_{\tmop{desloc}} d_{{\'a} \tmop{gua}} g = 0 &  & \\
+  \frac{4 \pi r^3 \tmop{dg}}{3} - \pi \left( \tmop{Rh}^2 - \frac{h^3}{3}
+  \right) d_{{\'a} \tmop{gua}} g = 0 &  & \\
+  \frac{4 r^3 d}{3} - \left( \tmop{Rh}^2 - \frac{h^3}{3} \right) d_{{\'a}
+  \tmop{gua}} = 0 &  & 
+\end{eqnarray*}
+Utilizando para a {\'a}gua a densidade de 1 (assumindo aqui unidades
+convencionais do SI) e para a
+
+esfera o valor dado no enunciado, 0,6, teremos
+\begin{eqnarray*}
+  \frac{2, 4 r^3}{3} - \left( \tmop{Rh}^2 - \frac{h^3}{3} \right) = 0 &  & \\
+  2, 4 r^3 - (3 R^{} h^2 - h^3) = 0 &  & \\
+  h^3 - 3 \tmop{Rh}^2 + 2, 4 r^3 = 0 &  & 
+\end{eqnarray*}
+Agora, queremos encontrar h em fra{\c c}{\~a}o de R. Convertemos a nossa
+equa{\c c}{\~a}o para um sistema de
+
+unidades em que, para comprimentos, R = 1.
+\[ h^3 - 3 h^2 + 2, 4 = 0 \]
+Temos ent{\~a}o a fun{\c c}{\~a}o para a qual queremos buscar uma raiz.
+Lembremos que s{\'o} ter{\~a}o significado
+
+f{\'i}sico as solu{\c c}{\~o}es em que $0 \leq h \leq 2$, portanto apenas
+essas nos interessar{\~a}o.
+
+A derivada dessa fun{\c c}{\~a}o ser{\'a}:
+\[ 3 h^2 - 6 h \]
+Que tem raiz em 0 e 2. Por conta da derivada ser uma fun{\c c}{\~a}o
+cont{\'i}nua, isso significa que, nesse
+
+intervalo, a fun{\c c}{\~a}o ou {\'e} estritamente crescente ou estritamente
+decrescente, n{\~a}o podendo, portanto,
+
+passar duas vezes pelo zero. J{\'a} que $0^3 - 3 \times 0^2 + 2, 4 = 2, 4 > 0$
+e $8 - 3 \times 4 + 2, 4 = - 1, 6 < 0$ teremos uma
+
+raiz nesse intervalo, que ser{\'a} por isso {\'u}nica.
+
+\
+
+Dado que a fun{\c c}{\~a}o {\'e} um polin{\^o}mio sua resposta se encontra
+num intervalo bem definido e sabemos
+
+ser a {\'u}nica raiz nesse intervalo, al{\'e}m de sua derivada ser de
+c{\'a}lculo simples, o problema maior
+
+parece ser n{\~a}o a converg{\^e}ncia do algoritmo, mas sim a velocidade da
+converg{\^e}ncia. Para maximizar
+
+essa velocidade, dentre os m{\'e}todos que estudamos, o m{\'e}todo de Newton
+parece ser o ideal.
+
+O c{\'o}digo para a aplica{\c c}{\~a}o desse m{\'e}todo ser{\'a} fornecido
+junto com o PDF, mas teremos como
+
+resultado final para o m{\'e}todo de Newton, com suposi{\c c}{\~a}o inicial de
+1 e toler{\^a}ncia de $10^{- 12}$, o valor de h = 1,134137845704535, ap{\'o}s
+dezesseis itera{\c c}{\~o}es do m{\'e}todo.
+
+Isso significa que h ser{\'a}, aproximadamente, 1,134137845704535R.
+
+Esse valor pode ser testado caso o lancemos na fun{\c c}{\~a}oo original, onde
+teremos a resposta de que os valores do empuxo e da gravidade, ainda que
+n{\~a}o exatamente iguais, ir{\~a}o diferir por, aproximadamente, $4, 44089
+\times 10^{- 15} R^3$. Podemos notar algumas coisas. Em primeiro lugar, o erro
+da nossa solu{\c c}{\~a}o ser{\'a}, em fra{\c c}{\~a}o da massa, constante,
+j{\'a} que ambos tem a mesma depend{\^e}ncia c{\'u}bica de R. O erro absoluta
+da for{\c c}a, por{\'e}m ir{\'a} crescer em propor{\c c}{\~a}o de $R^3$,
+significando que, mesmo que ela n{\~a}o seja capaz de produzir acelera{\c
+c}{\~a}o apreci{\'a}vel na esfera, teremos a presen{\c c}a de uma for{\c c}a
+resultante de m{\'o}dulo consider{\'a}vel no sistema para valores maiores de
+R, o que pode tornar a solu{\c c}{\~a}o inaplic{\'a}vel para esses valores,
+caso se busque uma resultante zero, ao inv{\'e}s de somente uma esfera sem
+movimento.
+
+\
+
+\
+
+\end{document}
