@@ -153,23 +153,23 @@ def main():
     a = 0
     b = 2
 
-    estimador = EstimadorRaizes(equacao, a, b)
+    estimador = EstimadorRaizes(equacao, a, b, erro=1e-12)
     
     estimativa, iteracoes = estimador.bisseccao()
     print("Método: bissecção")
-    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}")
+    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}, valor: {equacao(estimativa)}")
     
     estimativa, iteracoes = estimador.ponto_falso()
     print("Método: ponto falso")
-    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}")
+    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}, valor: {equacao(estimativa)}")
 
     estimativa, iteracoes = estimador._ponto_fixo(equacao_ponto_fixo)
     print("Método: ponto fixo")
-    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}")
+    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}, valor: {equacao(estimativa)}")
     
     estimativa, iteracoes = estimador.newton_raphson()
     print("Método: Newton-Raphson")
-    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}")
+    print(f"estimativa: {estimativa}, iteracoes: {iteracoes}, valor: {equacao(estimativa)}")
 
 
 if __name__ == '__main__':
