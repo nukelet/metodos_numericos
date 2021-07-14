@@ -1,4 +1,5 @@
 import numpy as np
+from numpy.lib import math
 from least_squares import least_squares
 import matplotlib.pyplot as plt
 
@@ -9,6 +10,8 @@ plt.scatter(x_vals, y_vals)
 
 coefs = least_squares([lambda x: 1, lambda x: x],
         x_vals, y_vals)
-# plt.plot(x_vals, [coefs[0] + coefs[1]*t for t in x_vals])
-
+print(coefs)
+plt.plot(x_vals, [coefs[0] + coefs[1]*t for t in x_vals])
+error = math.sqrt(sum([(y - (coefs[0] + coefs[1]*x))**2 for x, y in zip(x_vals, y_vals)])/x_vals.size)
+print(error)
 plt.show()
