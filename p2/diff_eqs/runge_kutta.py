@@ -11,7 +11,7 @@ b: right boundary of the solution interval
 n: number of steps (= partitions of the interval)
 """
 def runge_kutta(f: Callable[[float, float], float], f0, a, b, n):
-    if (b < a):
+    if b < a:
         print("Invalid interval boundaries (b < a)")
         return
     

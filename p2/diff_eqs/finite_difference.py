@@ -41,17 +41,29 @@ def finite_difference(a, b, c, f, y_start, y_end,
     
     return np.matmul(np.linalg.inv(A), B)
 
-def f(t):
-    if t >= 1 and t <= 3.5:
+def func(t):
+    if t == 0.2:
         return 2
     else:
         return 0
 
 if __name__ == "__main__":
-    n = 1000
-    y_vals = finite_difference(1, 2.12, 0.078, f,
-            2, 2,
-            0, 5, n)
-    h = 5/n
-    plt.plot(np.arange(h, 5-h, h), y_vals)
+    a = 0.5
+    b = 1
+    c = 0.05
+    f = func
+    start_y = 0.4
+    end_y = 0.1
+    start = 0
+    end = 80
+    n = 400
+
+    y_vals = finite_difference(a, b, c, f,
+            start_y, end_y, start, end, n)
+
+    h = (end-start)/n
+    print(h)
+    x_ticks = np.arange(start+h, end-h, h)
+    print(y_vals)
+    plt.plot(x_ticks, y_vals)
     plt.show()
